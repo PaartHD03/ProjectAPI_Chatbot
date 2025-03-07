@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai Metro AI Assistant | Line 3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --metro-blue: #00a3ff;
+            --vibrant-accent: #ff6b6b;
+            --dark-bg: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.9) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-section {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('https://images.unsplash.com/photo-1581091226033-d6c7af0d1464') center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metro-train-animation {
+            position: absolute;
+            bottom: 20%;
+            width: 200px;
+            animation: trainMove 20s linear infinite;
+        }
+
+        @keyframes trainMove {
+            0% { left: -20%; }
+            100% { left: 100%; }
+        }
+
+        .chatbot-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            box-shadow: 0 0 30px rgba(0, 163, 255, 0.3);
+        }
+
+        .chatbot-iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 15px;
+            background: transparent;
+        }
+
+        .section-title {
+            color: var(--metro-blue);
+            text-shadow: 0 0 15px rgba(0, 163, 255, 0.5);
+        }
+
+        .metro-card {
+            background: rgba(255, 255, 255, 0.1) !important;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+        }
+
+        .metro-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 163, 255, 0.3);
+        }
+
+        .pulsate {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        .btn-metro {
+            background: var(--metro-blue);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .btn-metro:hover {
+            background: var(--vibrant-accent);
+            transform: scale(1.05);
+        }
+
+        /* Updated Live Ticker Styles */
+        .live-ticker-fullwidth {
+            background: rgba(255, 107, 107, 0.3);
+            border-top: 2px solid var(--vibrant-accent);
+            border-bottom: 2px solid var(--vibrant-accent);
+            margin: 40px 0;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        .live-ticker {
+            padding: 15px 0;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .live-ticker marquee {
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .live-ticker marquee img {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="C:\Users\paart\OneDrive\Desktop\Project_0\WhatsApp Image 2025-03-07 at 13.53.13_bc630ee2.jpg" alt="MMRCL Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#info">Metro Info</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <img src="C:\Users\paart\OneDrive\Desktop\Project_0\WhatsApp Image 2025-03-07 at 13.53.13_b99901b5.jpg" class="metro-train-animation" alt="Metro Train">
+        <div class="container text-center">
+            <h1 class="display-4 mb-4">Your AI Assistant for Mumbai Metro Line 3</h1>
+            <p class="lead">Get real-time updates, journey planning, and travel information</p>
+        </div>
+    </section>
+
+    <!-- Chatbot Section -->
+    <section class="py-5">
+        <div class="container chatbot-container">
+            <iframe class="chatbot-iframe" 
+                    src="https://www.chatbase.co/chatbot-iframe/GoebyQL9NyZjP2xdphwjP"
+                    allow="microphone"></iframe>
+        </div>
+    </section>
+
+    <!-- Metro Information -->
+    <section id="info" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Metro Line 3 Information</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card metro-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">🚇 Stations</h5>
+                            <p class="card-text">33 stations connecting Cuffe Parade to SEEPZ</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more cards for Timings, Fares, Facilities -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Width Live Status -->
+    <section class="live-ticker-fullwidth">
+        <div class="container-fluid">
+            <div class="live-ticker">
+                <marquee behavior="scroll" direction="left">
+                    🚄 Real-time Updates: Trains running on time | No delays reported | Happy Journey! &nbsp;&nbsp;&nbsp;
+                    🔔 Next train from Cuffe Parade in 8 minutes &nbsp;&nbsp;&nbsp;
+                    🚧 Maintenance Alert: Escalator 2 at Bandra Kurla Complex station under maintenance &nbsp;&nbsp;&nbsp;
+                    🎉 Special Offer: First 100 passengers get free metro rides today!
+                </marquee>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faq" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Frequently Asked Questions</h2>
+            <div class="accordion">
+                <!-- Add FAQ items here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Contact Us</h2>
+            <form>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Name">
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                </div>
+                <button class="btn btn-metro w-100">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // Animations
+        gsap.from(".hero-section h1", {duration: 1, y: 50, opacity: 0});
+        gsap.from(".metro-card", {scrollTrigger: ".metro-card", duration: 0.5, opacity: 0, y: 50, stagger: 0.2});
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.style.backgroundColor = window.scrollY > 50 ? 'rgba(0, 0, 0, 0.9)' : 'transparent';
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
